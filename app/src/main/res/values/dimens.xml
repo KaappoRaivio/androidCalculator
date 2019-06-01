@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="calculator_button_number_side_length">64dp</dimen>
+    <dimen name="calculator_button_number_textSize">20sp</dimen>
+    <dimen name="calculator_buttonpad_height">200dp</dimen>
+</resources>
