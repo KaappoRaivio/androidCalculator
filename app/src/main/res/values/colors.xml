@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="numberButtonBackGround">#F0F0F0</color>
+    <color name="lowerHalfButtonBackground">#F0F0F0</color>
+    <color name="upperHalfButtonBackground">#e6e6ff</color>
     <color name="divider">#000000</color>
+    <color name="operator_color">#555aff</color>
+
 </resources>

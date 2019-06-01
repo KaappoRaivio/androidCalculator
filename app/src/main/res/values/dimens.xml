@@ -2,5 +2,6 @@
 <resources>
     <dimen name="calculator_button_number_side_length">64dp</dimen>
     <dimen name="calculator_button_number_textSize">20sp</dimen>
-    <dimen name="calculator_buttonpad_height">200dp</dimen>
+    <dimen name="calculator_buttonpad_height">250dp</dimen>
+    <dimen name="calculator_separator_width">1dp</dimen>
 </resources>
