@@ -1,6 +1,6 @@
 package raivio.kaappo.calculator.algo.operator.genericoperator;
 
-import lexer.token.FoundToken;
+import raivio.kaappo.calculator.algo.lexer.token.FoundToken;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,10 +37,14 @@ public class GenericOperatorGroup {
     }
 
     public Operator getOperator (FoundToken token) {
-        return operators
-                .stream()
-                .filter(operator -> token.is(operator.getTokenType()))
-                .findAny()
-                .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as an operator!"));
+        try {
+            return operators
+                    .stream()
+                    .filter(operator -> token.is(operator.getTokenType()))
+                    .findAny()
+                    .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as an operator!"));
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 }

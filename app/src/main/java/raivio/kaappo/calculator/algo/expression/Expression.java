@@ -1,16 +1,16 @@
 package raivio.kaappo.calculator.algo.expression;
 
-import lexer.token.Token;
-import math.fraction.fraction.Fraction;
-import math.fraction.fraction.Fractionable;
-import operator.BoundingOperator;
-import operator.binaryoperator.BinaryOperator;
-import operator.binaryoperator.EvaluatingOrder;
-import operator.genericoperator.Operator;
-import operator.genericoperator.OperatorType;
-import operator.unaryoperator.UnaryOperator;
-import operator.unaryoperator.UnaryOperatorType;
-import parser.MyValueProvider;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fraction;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.operator.BoundingOperator;
+import raivio.kaappo.calculator.algo.operator.binaryoperator.BinaryOperator;
+import raivio.kaappo.calculator.algo.operator.binaryoperator.EvaluatingOrder;
+import raivio.kaappo.calculator.algo.operator.genericoperator.Operator;
+import raivio.kaappo.calculator.algo.operator.genericoperator.OperatorType;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperator;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperatorType;
+import raivio.kaappo.calculator.algo.parser.MyValueProvider;
 
 import java.math.BigInteger;
 import java.math.MathContext;

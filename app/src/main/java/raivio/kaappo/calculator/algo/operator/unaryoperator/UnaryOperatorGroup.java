@@ -1,7 +1,7 @@
 package raivio.kaappo.calculator.algo.operator.unaryoperator;
 
-import lexer.token.FoundToken;
-import lexer.token.Token;
+import raivio.kaappo.calculator.algo.lexer.token.FoundToken;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,19 +32,27 @@ public class UnaryOperatorGroup {
     }
 
     public UnaryOperator getSuffixOperator (FoundToken token) {
-        return suffixOperators
-                .stream()
-                .filter(unaryOperator -> token.is(unaryOperator.getTokenType()))
-                .findAny()
-                .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as a suffix operator!"));
+        try {
+            return suffixOperators
+                    .stream()
+                    .filter(unaryOperator -> token.is(unaryOperator.getTokenType()))
+                    .findAny()
+                    .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as a suffix operator!"));
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 
     public UnaryOperator getPrefixOperator (FoundToken token) {
-        return prefixOperators
-                .stream()
-                .filter(unaryOperator -> token.is(unaryOperator.getTokenType()))
-                .findAny()
-                .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as a prefix operator!"));
+        try {
+            return prefixOperators
+                    .stream()
+                    .filter(unaryOperator -> token.is(unaryOperator.getTokenType()))
+                    .findAny()
+                    .orElseThrow(() -> new RuntimeException("Token " + token + " is not defined as a prefix operator!"));
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 
     public boolean isSuffixOperator (FoundToken token) {

@@ -1,9 +1,9 @@
 package raivio.kaappo.calculator.algo.math.utils;
 
-import expression.SymbolTable;
-import lexer.token.SymbolToken;
-import math.fraction.approxfraction.ApproxFraction;
-import math.fraction.fraction.Fraction;
+import raivio.kaappo.calculator.algo.expression.SymbolTable;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.math.fraction.approxfraction.ApproxFraction;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fraction;
 
 import java.math.BigInteger;
 import java.util.HashMap;

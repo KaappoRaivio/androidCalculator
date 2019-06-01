@@ -30,12 +30,16 @@ public class Term {
     }
 
     public Term findLike (Polynomial other) {
-        return other
-                .getTerms()
-                .stream()
-                .filter(this::isLike)
-                .findAny()
-                .orElseThrow(() -> new RuntimeException("Didn't find a match for term " + this + " from polynomial " + other));
+        try {
+            return other
+                    .getTerms()
+                    .stream()
+                    .filter(this::isLike)
+                    .findAny()
+                    .orElseThrow(() -> new RuntimeException("Didn't find a match for term " + this + " from polynomial " + other));
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 
     public boolean isLike (Term other) {

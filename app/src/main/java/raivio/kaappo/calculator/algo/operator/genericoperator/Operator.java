@@ -1,8 +1,8 @@
 package raivio.kaappo.calculator.algo.operator.genericoperator;
 
-import lexer.token.Token;
-import expression.Payload;
-import math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.expression.Payload;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
 
 import java.util.List;
 

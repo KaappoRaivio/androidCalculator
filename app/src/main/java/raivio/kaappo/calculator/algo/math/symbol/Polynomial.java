@@ -53,10 +53,14 @@ public class Polynomial {
     }
 
     public Term largestTerm () {
-        return getTerms()
-                .stream()
-                .max(Comparator.comparingInt(Term::getN))
-                .orElseThrow(RuntimeException::new);
+        try {
+            return getTerms()
+                    .stream()
+                    .max(Comparator.comparingInt(Term::getN))
+                    .orElseThrow(RuntimeException::new);
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 
     @Override

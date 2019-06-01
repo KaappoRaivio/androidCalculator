@@ -1,10 +1,10 @@
 package raivio.kaappo.calculator.algo.operator.unaryoperator;
 
-import lexer.token.Token;
-import math.fraction.fraction.Fractionable;
-import operator.genericoperator.Operator;
-import operator.genericoperator.OperatorType;
-import expression.Payload;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.operator.genericoperator.Operator;
+import raivio.kaappo.calculator.algo.operator.genericoperator.OperatorType;
+import raivio.kaappo.calculator.algo.expression.Payload;
 
 import java.util.List;
 

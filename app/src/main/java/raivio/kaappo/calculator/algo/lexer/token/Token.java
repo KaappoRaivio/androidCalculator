@@ -1,6 +1,6 @@
 package raivio.kaappo.calculator.algo.lexer.token;
 
-import lexer.UnknownTokenException;
+import raivio.kaappo.calculator.algo.lexer.UnknownTokenException;
 
 import java.util.Arrays;
 import java.util.List;
@@ -54,11 +54,15 @@ public enum Token {
     }
 
     public static Token getToken (String pattern) {
-        return sortedValues()
-                .stream()
-                .filter(token -> token.matches(pattern))
-                .findAny()
-                .orElseThrow(() -> new UnknownTokenException("Unknown token " + pattern + "!"));
+        try {
+            return sortedValues()
+                    .stream()
+                    .filter(token -> token.matches(pattern))
+                    .findAny()
+                    .orElseThrow(() -> new UnknownTokenException("Unknown token " + pattern + "!"));
+        } catch (Throwable throwable) {
+            throw new RuntimeException(throwable);
+        }
     }
 
     public Pattern getRemoverRegex () {

@@ -1,19 +1,19 @@
 package raivio.kaappo.calculator.algo.parser;
 
-import expression.*;
-import lexer.Lexer;
-import lexer.token.FoundToken;
-import lexer.token.NumberToken;
-import lexer.token.SymbolToken;
-import lexer.token.Token;
-import math.fraction.fraction.Fractionable;
-import operator.BoundingOperator;
-import operator.binaryoperator.BinaryOperator;
-import operator.genericoperator.GenericOperatorGroup;
-import operator.genericoperator.GenericOperatorStack;
-import operator.genericoperator.Operator;
-import operator.genericoperator.OperatorType;
-import operator.unaryoperator.UnaryOperator;
+import raivio.kaappo.calculator.algo.expression.*;
+import raivio.kaappo.calculator.algo.lexer.Lexer;
+import raivio.kaappo.calculator.algo.lexer.token.FoundToken;
+import raivio.kaappo.calculator.algo.lexer.token.NumberToken;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.operator.BoundingOperator;
+import raivio.kaappo.calculator.algo.operator.binaryoperator.BinaryOperator;
+import raivio.kaappo.calculator.algo.operator.genericoperator.GenericOperatorGroup;
+import raivio.kaappo.calculator.algo.operator.genericoperator.GenericOperatorStack;
+import raivio.kaappo.calculator.algo.operator.genericoperator.Operator;
+import raivio.kaappo.calculator.algo.operator.genericoperator.OperatorType;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperator;
 
 public class ExpressionParser<T extends Fractionable> {
     private Lexer lexer;

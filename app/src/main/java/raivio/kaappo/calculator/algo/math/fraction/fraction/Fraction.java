@@ -1,16 +1,16 @@
 package raivio.kaappo.calculator.algo.math.fraction.fraction;
 
 
-import expression.Expression;
-import expression.SymbolTable;
-import lexer.token.SymbolToken;
-import math.error.MathError;
-import math.fraction.approxfraction.ApproxFraction;
-import math.utils.RootCalculus;
-import math.utils.TrigonometryUtils;
-import misc.BigFunctions;
-import misc.Pair;
-import misc.StringUtil;
+import raivio.kaappo.calculator.algo.expression.Expression;
+import raivio.kaappo.calculator.algo.expression.SymbolTable;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.math.error.MathError;
+import raivio.kaappo.calculator.algo.math.fraction.approxfraction.ApproxFraction;
+import raivio.kaappo.calculator.algo.math.utils.RootCalculus;
+import raivio.kaappo.calculator.algo.math.utils.TrigonometryUtils;
+import raivio.kaappo.calculator.algo.misc.BigFunctions;
+import raivio.kaappo.calculator.algo.misc.Pair;
+import raivio.kaappo.calculator.algo.misc.StringUtil;
 
 
 import ch.obermuhlner.math.big.BigDecimalMath;
@@ -214,7 +214,11 @@ public class Fraction implements Fractionable {
     }
 
     private Fraction power (BigInteger exponent) {
-        int integerExponent = exponent.intValueExact();
+        if(exponent.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) > 0) {
+            throw new RuntimeException("Overflow!");
+        }
+
+        int integerExponent = exponent.intValue();
 
         if (integerExponent < 0) {
             return new Fraction(numerator.pow(-integerExponent), denominator.pow(-integerExponent)).inverse();

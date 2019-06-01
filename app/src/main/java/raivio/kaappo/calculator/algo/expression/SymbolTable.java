@@ -1,10 +1,10 @@
 package raivio.kaappo.calculator.algo.expression;
 
-import lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
 
-import math.fraction.approxfraction.ApproxFraction;
-import math.fraction.fraction.Fraction;
-import math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.math.fraction.approxfraction.ApproxFraction;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fraction;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -34,7 +34,11 @@ public class SymbolTable {
     }
 
     public Fractionable getValue (SymbolToken token) {
-        return Optional.ofNullable(symbolTable.get(token)).orElseThrow(() -> new RuntimeException("Unknown variable '" + token.getValue() + "'!"));
+        try {
+            return Optional.ofNullable(symbolTable.get(token)).orElseThrow(() -> new RuntimeException("Unknown variable '" + token.getValue() + "'!"));
+        } catch (Throwable t) {
+            throw new RuntimeException(t);
+        }
     }
 
 }

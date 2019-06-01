@@ -1,7 +1,7 @@
 package raivio.kaappo.calculator.algo.math.utils;
 
-import math.fraction.fraction.Fraction;
-import math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fraction;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
 
 import java.math.BigInteger;
 

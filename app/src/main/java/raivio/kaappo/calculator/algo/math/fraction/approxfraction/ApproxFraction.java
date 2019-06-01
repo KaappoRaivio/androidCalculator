@@ -1,12 +1,12 @@
 package raivio.kaappo.calculator.algo.math.fraction.approxfraction;
 
-import expression.Expression;
-import expression.SymbolTable;
-import lexer.token.SymbolToken;
-import math.fraction.fraction.Fraction;
-import math.utils.TrigonometryUtils;
-import misc.BigFunctions;
-import misc.StringUtil;
+import raivio.kaappo.calculator.algo.expression.Expression;
+import raivio.kaappo.calculator.algo.expression.SymbolTable;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fraction;
+import raivio.kaappo.calculator.algo.math.utils.TrigonometryUtils;
+import raivio.kaappo.calculator.algo.misc.BigFunctions;
+import raivio.kaappo.calculator.algo.misc.StringUtil;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

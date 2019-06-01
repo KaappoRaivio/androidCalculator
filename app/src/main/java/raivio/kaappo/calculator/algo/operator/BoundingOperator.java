@@ -1,10 +1,10 @@
 package raivio.kaappo.calculator.algo.operator;
 
-import lexer.token.Token;
-import math.fraction.fraction.Fractionable;
-import operator.genericoperator.OperatorType;
-import operator.unaryoperator.UnaryOperator;
-import operator.unaryoperator.UnaryOperatorType;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.operator.genericoperator.OperatorType;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperator;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperatorType;
 
 public class BoundingOperator extends UnaryOperator {
     private final Token rightToken;

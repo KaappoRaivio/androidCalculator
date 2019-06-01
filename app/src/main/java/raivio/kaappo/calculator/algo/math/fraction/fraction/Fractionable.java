@@ -1,6 +1,6 @@
 package raivio.kaappo.calculator.algo.math.fraction.fraction;
 
-import expression.Payload;
+import raivio.kaappo.calculator.algo.expression.Payload;
 
 import java.util.regex.Pattern;
 

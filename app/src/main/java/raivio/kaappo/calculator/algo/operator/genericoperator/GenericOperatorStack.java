@@ -1,6 +1,6 @@
 package raivio.kaappo.calculator.algo.operator.genericoperator;
 
-import lexer.token.FoundToken;
+import raivio.kaappo.calculator.algo.lexer.token.FoundToken;
 
 
 import java.util.Arrays;

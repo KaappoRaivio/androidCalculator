@@ -1,13 +1,13 @@
 package raivio.kaappo.calculator.algo.lexer;
 
-import expression.Expression;
-import lexer.token.FoundToken;
-import lexer.token.NumberToken;
-import lexer.token.SymbolToken;
-import lexer.token.Token;
-import misc.Pair;
-import operator.binaryoperator.BinaryOperator;
-import operator.unaryoperator.UnaryOperator;
+import raivio.kaappo.calculator.algo.expression.Expression;
+import raivio.kaappo.calculator.algo.lexer.token.FoundToken;
+import raivio.kaappo.calculator.algo.lexer.token.NumberToken;
+import raivio.kaappo.calculator.algo.lexer.token.SymbolToken;
+import raivio.kaappo.calculator.algo.lexer.token.Token;
+import raivio.kaappo.calculator.algo.misc.Pair;
+import raivio.kaappo.calculator.algo.operator.binaryoperator.BinaryOperator;
+import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperator;
 
 import java.math.BigDecimal;
 import java.util.Deque;

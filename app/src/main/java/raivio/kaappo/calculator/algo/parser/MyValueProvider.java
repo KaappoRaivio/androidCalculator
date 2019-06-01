@@ -1,6 +1,6 @@
 package raivio.kaappo.calculator.algo.parser;
 
-import math.fraction.fraction.Fractionable;
+import raivio.kaappo.calculator.algo.math.fraction.fraction.Fractionable;
 
 public class MyValueProvider<T extends Fractionable> implements ValueProvider<T> {
 
