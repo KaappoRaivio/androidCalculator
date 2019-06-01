@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public enum Token {
     ELLIPSIS ("\\.\\.\\.", "Ellipsis", -2),
-    SYMBOL ("[a-z\\%]", "Symbol", -1),
+    SYMBOL ("[a-z\\%π]", "Symbol", -1),
 
     SIN ("sin", "Sin", 0),
     COS ("cos", "Cos", 0),
@@ -19,9 +19,9 @@ public enum Token {
     LN ("ln", "Ln", 0),
 
     ADD ("\\+", "Plus", 1),
-    SUBTRACT ("\\-", "Minus", 1),
-    MULTIPLY ("\\*", "Asterisk", 1),
-    DIVIDE ("\\/", "Slash", 1),
+    SUBTRACT ("\\-|–", "Minus", 1),
+    MULTIPLY ("\\*|×", "Asterisk", 1),
+    DIVIDE ("\\/|÷", "Slash", 1),
     LPAREN ("\\(", "Left parenthesis", 1),
     RPAREN ("\\)", "Right parenthesis", 1),
     END ("$", "End", 1),

@@ -26,13 +26,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:columnCount="3"
-            android:rowCount="4">
+            android:rowCount="4"
+
+            android:layout_margin="8dp"
+
+            >
 
             <Button
                 android:id="@+id/seven"
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="0"
                 android:layout_columnWeight="1"
@@ -53,6 +58,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="1"
                 android:layout_columnWeight="1"
@@ -71,6 +77,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="2"
                 android:layout_columnWeight="1"
@@ -89,6 +96,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="0"
                 android:layout_columnWeight="1"
@@ -107,6 +115,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="1"
                 android:layout_columnWeight="1"
@@ -125,6 +134,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="2"
                 android:layout_columnWeight="1"
@@ -141,6 +151,7 @@
             <Button
                 android:id="@+id/one"
                 android:layout_width="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_height="0dp"
 
@@ -161,6 +172,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="1"
                 android:layout_columnWeight="1"
@@ -179,6 +191,7 @@
                 android:layout_width="0dp"
 
                 android:layout_height="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_column="2"
                 android:layout_columnWeight="1"
@@ -205,6 +218,7 @@
                 android:layout_rowWeight="1"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center"
+                android:onClick="onSimpleButtonClick"
 
                 android:text="0"
                 android:textAlignment="gravity"
@@ -226,7 +240,32 @@
 
                 android:text="."
                 android:textAlignment="gravity"
-                android:textSize="@dimen/calculator_button_number_textSize" />
+                android:textSize="@dimen/calculator_button_number_textSize"
+
+                android:onClick="onSimpleButtonClick"
+                />
+
+            <Button
+                android:id="@+id/decimaltoggle"
+                android:layout_width="0dp"
+
+                android:layout_height="0dp"
+
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_row="3"
+                android:layout_rowWeight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
+
+                android:text="D"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/calculator_button_number_textSize"
+
+                android:textColor="@color/decimalcolor"
+                android:onClick="decimalToggle"
+                />
 
         </GridLayout>
 
@@ -258,6 +297,9 @@
         app:layout_constraintStart_toEndOf="@id/centerVerticalSeparator"
 
         app:layout_constraintTop_toTopOf="@id/centerVerticalSeparator"
+
+        android:background="@color/lowerHalfButtonBackground"
+
         app:layout_constraintBottom_toBottomOf="parent">
 
         <GridLayout
@@ -266,7 +308,9 @@
 
             android:columnCount="2"
             android:rowCount="4"
-            android:background="@color/lowerHalfButtonBackground"
+
+            android:layout_margin="8dp"
+
 
 
             >
@@ -289,6 +333,7 @@
                 android:textAlignment="gravity"
 
                 android:textSize="@dimen/calculator_button_number_textSize"
+                android:onClick="onSimpleButtonClick"
 
                 android:textColor="@color/operator_color"
                 />
@@ -311,6 +356,7 @@
                 android:textAlignment="gravity"
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textColor="@color/operator_color"
+                android:onClick="onSimpleButtonClick"
 
                 />
 
@@ -333,6 +379,7 @@
                 android:textAlignment="gravity"
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textColor="@color/operator_color"
+                android:onClick="onSimpleButtonClick"
 
                 />
 
@@ -356,6 +403,7 @@
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textColor="@color/operator_color"
 
+                android:onClick="onSimpleButtonClick"
                 />
 
             <Button
@@ -378,6 +426,7 @@
                 android:textAlignment="gravity"
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textColor="@color/operator_color"
+                android:onClick="delete"
 
                 />
 
@@ -401,6 +450,7 @@
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textColor="@color/operator_color"
 
+                android:onClick="commitResult"
                 />
 
         </GridLayout>
@@ -428,11 +478,15 @@
 
         android:background="@color/upperHalfButtonBackground"
 
+
+
         >
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
+            android:layout_margin="8dp"
 
             android:columnCount="5"
             android:rowCount="3"
@@ -446,6 +500,7 @@
 
                 android:layout_column="0"
                 android:layout_row="0"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -467,6 +522,7 @@
 
                 android:layout_column="1"
                 android:layout_row="0"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -490,6 +546,7 @@
 
                 android:layout_column="2"
                 android:layout_row="0"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -513,6 +570,7 @@
 
                 android:layout_column="3"
                 android:layout_row="0"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -547,7 +605,10 @@
 
                 android:background="?android:attr/selectableItemBackground"
 
-                android:textSize="@dimen/calculator_button_number_textSize" />
+                android:textSize="@dimen/calculator_button_number_textSize"
+
+                android:onClick="changeAngleUnit"
+                />
 
             <Button
                 android:id="@+id/power"
@@ -557,6 +618,7 @@
 
                 android:layout_column="0"
                 android:layout_row="1"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -578,6 +640,7 @@
 
                 android:layout_column="1"
                 android:layout_row="1"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -599,6 +662,7 @@
 
                 android:layout_column="2"
                 android:layout_row="1"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -622,6 +686,7 @@
 
                 android:layout_column="3"
                 android:layout_row="1"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -646,6 +711,7 @@
 
                 android:layout_column="4"
                 android:layout_row="1"
+                android:onClick="onFunctionButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -684,6 +750,8 @@
                 android:textSize="@dimen/calculator_button_number_textSize"
 
                 android:textAllCaps="false"
+
+                android:onClick="onSimpleButtonClick"
                 />
 
             <Button
@@ -707,6 +775,8 @@
 
                 android:textSize="@dimen/calculator_button_number_textSize"
                 android:textAllCaps="false"
+                android:onClick="onSimpleButtonClick"
+
                 />
 
             <Button
@@ -717,6 +787,7 @@
 
                 android:layout_column="2"
                 android:layout_row="2"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
@@ -735,6 +806,7 @@
             <Button
                 android:id="@+id/left_paren"
                 android:layout_width="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_height="0dp"
 
@@ -756,6 +828,7 @@
             <Button
                 android:id="@+id/right_paren"
                 android:layout_width="0dp"
+                android:onClick="onSimpleButtonClick"
 
                 android:layout_height="0dp"
 
@@ -793,5 +866,51 @@
         app:layout_constraintTop_toTopOf="parent"
 
         app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/preview"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="8dp"
+
+        android:textSize="@dimen/calculator_preview_textsize"
+        android:gravity="end"
+
+        app:layout_constraintBottom_toTopOf="@id/centerHorizontalSeparator2"
+        android:text="placeholder"
+
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+
+        />
+
+    <EditText
+        android:id="@+id/result"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_margin="8dp"
+
+
+        android:layout_marginTop="8dp"
+
+        android:text="placeholder"
+
+        android:textSize="@dimen/calculator_result_textSize"
+
+        android:gravity="end"
+
+        app:layout_constraintBottom_toTopOf="@id/preview"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:focusable="false"
+        android:inputType="textNoSuggestions"
+        />
 
 </android.support.constraint.ConstraintLayout>

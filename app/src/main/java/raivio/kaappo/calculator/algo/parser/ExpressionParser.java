@@ -16,6 +16,7 @@ import raivio.kaappo.calculator.algo.operator.genericoperator.OperatorType;
 import raivio.kaappo.calculator.algo.operator.unaryoperator.UnaryOperator;
 
 public class ExpressionParser<T extends Fractionable> {
+    private final BinaryOperator implicitOperator;
     private Lexer lexer;
     private ValueProvider<T> valueProvider;
     private GenericOperatorStack genericOperatorStack;
@@ -32,11 +33,18 @@ public class ExpressionParser<T extends Fractionable> {
         lexer = new Lexer(input, implicitOperator);
         this.valueProvider = valueProvider;
         this.genericOperatorStack = genericOperatorStack;
+        this.implicitOperator = implicitOperator;
 
 
-        if (lexer.isEmpty()) {
-            throw new RuntimeException("Input cannot be nothing!");
-        }
+//        if (lexer.isEmpty()) {
+//            throw new RuntimeException("Input cannot be nothing!");
+//        }
+    }
+
+    public ExpressionParser<T> setInput (String newInput) {
+        lexer = new Lexer(newInput, implicitOperator);
+
+        return this;
     }
 
     public Expression parse () {

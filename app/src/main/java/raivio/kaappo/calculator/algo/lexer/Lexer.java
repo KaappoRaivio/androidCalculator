@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 
 public class Lexer {
     private final BinaryOperator implicitOperator;
-    private Deque<FoundToken> tokens = new LinkedList<>();
+    private LinkedList<FoundToken> tokens = new LinkedList<>();
     private Deque<FoundToken> alreadyRequestedTokens = new LinkedList<>();
 
     private int precision = -1;
@@ -37,7 +37,7 @@ public class Lexer {
         return precision;
     }
 
-    private void processInput(String input, Deque<FoundToken> alreadyProcessed, FoundToken latestToken) {
+    private void processInput(String input, LinkedList<FoundToken> alreadyProcessed, FoundToken latestToken) {
         if (input.length() == 0) {
             alreadyProcessed.add(new FoundToken(Token.END));
             tokens = alreadyProcessed;
@@ -127,6 +127,14 @@ public class Lexer {
     public FoundToken getNextToken () {
         alreadyRequestedTokens.addFirst(tokens.peekFirst());
         return tokens.pop();
+    }
+
+    public void deleteToken () {
+        try {
+            tokens.remove(tokens.size() - 2);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private FoundToken peekNextToken () {
