@@ -14,6 +14,10 @@ public enum Token {
     SIN ("sin", "Sin", 0),
     COS ("cos", "Cos", 0),
     TAN ("tan", "Tan", 0),
+    ARCSIN("asin", "Arcsin", 0),
+    ARCCOS("acos", "Arccos", 0),
+    ARCTAN("atan", "Arctan", 0),
+
     LOG10 ("log10", "Log10", 0),
     LOG2 ("log2", "Log2", 0),
     LN ("ln", "Ln", 0),

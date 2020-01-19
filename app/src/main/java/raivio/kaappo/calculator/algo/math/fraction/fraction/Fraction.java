@@ -247,6 +247,31 @@ public class Fraction implements Fractionable {
         return sin().divide(cos());
     }
 
+    public Fraction asin () {
+        if (USE_DEGREES) {
+            return TrigonometryUtils.asinMapDegrees.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.asin(toRadians().toDecimal(), Expression.CONTEXT)).toDegrees());
+        } else {
+            return TrigonometryUtils.asinMapRadians.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.asin(toDecimal(), Expression.CONTEXT)));
+        }
+    }
+
+    public Fraction acos () {
+        if (USE_DEGREES) {
+            return TrigonometryUtils.acosMapDegrees.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.asin(toRadians().toDecimal(), Expression.CONTEXT)).toDegrees());
+        } else {
+            return TrigonometryUtils.acosMapRadians.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.asin(toDecimal(), Expression.CONTEXT)));
+        }
+    }
+
+    public Fraction atan () {
+        if (USE_DEGREES) {
+            return new ApproxFraction(BigDecimalMath.atan(toRadians().toDecimal(), Expression.CONTEXT)).toDegrees();
+        } else {
+            return new ApproxFraction(BigDecimalMath.atan(toDecimal(), Expression.CONTEXT));
+        }
+    }
+
+
     public Fraction log10 () {
         return new ApproxFraction(BigDecimalMath.log10(toDecimal(), Expression.CONTEXT));
     }

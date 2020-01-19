@@ -40,6 +40,12 @@ public class Expression {
     public final static Operator operatorSin = new UnaryOperator(Token.SIN,                        (fractionable) -> fractionable.fractionValue().sin(), UnaryOperatorType.PREFIX);
     public final static Operator operatorCos = new UnaryOperator(Token.COS,                        (fractionable) -> fractionable.fractionValue().cos(), UnaryOperatorType.PREFIX);
     public final static Operator operatorTan = new UnaryOperator(Token.TAN,                        (fractionable) -> fractionable.fractionValue().tan(), UnaryOperatorType.PREFIX);
+    public final static Operator operatorArcsin = new UnaryOperator(Token.ARCSIN,                        (fractionable) -> fractionable.fractionValue().asin(), UnaryOperatorType.PREFIX);
+    public final static Operator operatorArccos = new UnaryOperator(Token.ARCCOS,                        (fractionable) -> fractionable.fractionValue().acos(), UnaryOperatorType.PREFIX);
+    public final static Operator operatorArctan = new UnaryOperator(Token.ARCTAN,                        (fractionable) -> fractionable.fractionValue().atan(), UnaryOperatorType.PREFIX);
+
+
+
     public final static Operator operatorL10 = new UnaryOperator(Token.LOG10,                      (fractionable) -> fractionable.fractionValue().log10(), UnaryOperatorType.PREFIX);
     public final static Operator operatorLo2 = new UnaryOperator(Token.LOG2,                       (fractionable) -> fractionable.fractionValue().log2(), UnaryOperatorType.PREFIX);
     public final static Operator operatorLon = new UnaryOperator(Token.LN,                         (fractionable) -> fractionable.fractionValue().ln(), UnaryOperatorType.PREFIX);

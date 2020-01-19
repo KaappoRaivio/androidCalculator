@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="lowerHalfButtonBackground">#F0F0F0</color>
     <color name="upperHalfButtonBackground">#e6e6ff</color>
+    <color name="upperHalfButtonBackgroundAccent">#CBCBFD</color>
     <color name="divider">#000000</color>
     <color name="operator_color">#555aff</color>
     <color name="decimalcolor">#cf0000</color>

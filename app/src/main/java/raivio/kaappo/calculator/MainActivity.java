@@ -8,10 +8,12 @@ import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.HapticFeedbackConstants;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -60,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
             new GenericOperatorGroup(OperatorType.UNARY,  Expression.operatorSqr, Expression.operatorISq,
                     Expression.operatorSin, Expression.operatorCos,
                     Expression.operatorTan, Expression.operatorL10,
-                    Expression.operatorLo2, Expression.operatorLon)
+                    Expression.operatorLo2, Expression.operatorLon,
+                    Expression.operatorArcsin, Expression.operatorArccos, Expression.operatorArctan
+                    )
 
     );
 
@@ -180,6 +184,20 @@ public class MainActivity extends AppCompatActivity {
         evalInputAndPreviewResult();
     }
 
+    public void onInvertButtonClick (View view) {
+//        view.setSelected(true);
+        System.out.println("moi");
+        if (((ToggleButton) view).isChecked()) {
+            ((TextView) findViewById(R.id.sine)).setText("asin");
+            ((TextView) findViewById(R.id.cosine)).setText("acos");
+            ((TextView) findViewById(R.id.tangent)).setText("atan");
+        } else {
+            ((TextView) findViewById(R.id.sine)).setText("sin");
+            ((TextView) findViewById(R.id.cosine)).setText("cos");
+            ((TextView) findViewById(R.id.tangent)).setText("tan");
+        }
+    }
+
 //    private void vibrate () {
 //        Vibrator v = (Vibrator) Objects.requireNonNull(getSystemService(Context.VIBRATOR_SERVICE));
 //        v.vibrate(VibrationEffect.createOneShot(10, VibrationEffect.DEFAULT_AMPLITUDE));
@@ -237,5 +255,10 @@ public class MainActivity extends AppCompatActivity {
             super.onPreExecute();
 
         }
+    }
+
+    @Override
+    public boolean onKeyDown (int keyCode, KeyEvent event) {
+
     }
 }
