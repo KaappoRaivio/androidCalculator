@@ -98,16 +98,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSimpleButtonClick (View view) {
-        previous.push(result.getText().toString());
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        onSimpleButtonClick(((Button) view).getText().toString());
+    }
 
-        Button button = (Button) view;
+    private void onSimpleButtonClick (String string) {
+        previous.push(result.getText().toString());
 
-        String toAdd = button.getText().toString();
-        result.append(toAdd);
-
+        result.append(string);
         evalInputAndPreviewResult();
-
     }
 
     public void onFunctionButtonClick (View view) {
@@ -258,7 +257,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onKeyUp (int keyCode, KeyEvent event) {
+        return true;
+    }
+
+
+
+    @Override
     public boolean onKeyDown (int keyCode, KeyEvent event) {
+//        System.out.println(event.getModifiers() & KeyEvent.META_SHIFT_ON);
+//
+        System.out.println(keyCode);
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_DEL:
+                delete(findViewById(R.id.backspace));
+                break;
+
+
+            case KeyEvent.KEYCODE_NUMPAD_ENTER:
+            case KeyEvent.KEYCODE_DPAD_CENTER:
+            case KeyEvent.KEYCODE_ENTER:
+                System.out.println("moimoimoi");
+                commitResult(findViewById(R.id.equals));
+                break;
+
+            default:
+                String value = String.valueOf(Character.valueOf((char) event.getUnicodeChar()));
+                if (HardwareKeyboardUtil.isValidInput(value)) {
+                    onSimpleButtonClick(HardwareKeyboardUtil.getInput(value));
+                    break;
+                } else {
+                    return true;
+                }
+        }
+
+        return true;
 
     }
 }
