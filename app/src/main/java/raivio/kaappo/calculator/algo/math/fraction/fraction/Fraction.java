@@ -228,8 +228,12 @@ public class Fraction implements Fractionable {
     }
 
     public Fraction sin () {
+        System.out.println("Sin: " + this + ", " + USE_DEGREES + ", " + new ApproxFraction(BigDecimalMath.sin(toRadians().toDecimal(), Expression.CONTEXT)));
         if (USE_DEGREES) {
-            return TrigonometryUtils.sinMapDegrees.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.sin(toRadians().toDecimal(), Expression.CONTEXT)).toDegrees());
+            return TrigonometryUtils.sinMapDegrees.getOrDefault(
+                    this.normalize(),
+                    new ApproxFraction(BigDecimalMath.sin(toRadians().toDecimal(), Expression.CONTEXT))
+            );
         } else {
             return TrigonometryUtils.sinMapRadians.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.sin(toDecimal(), Expression.CONTEXT)));
         }
@@ -237,7 +241,10 @@ public class Fraction implements Fractionable {
 
     public Fraction cos () {
         if (USE_DEGREES) {
-            return TrigonometryUtils.cosMapDegrees.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.cos(toRadians().toDecimal(), Expression.CONTEXT)).toDegrees());
+            return TrigonometryUtils.cosMapDegrees.getOrDefault(
+                    this.normalize(),
+                    new ApproxFraction(BigDecimalMath.cos(toRadians().toDecimal(), Expression.CONTEXT))
+            );
         } else {
             return TrigonometryUtils.cosMapRadians.getOrDefault(this.normalize(), new ApproxFraction(BigDecimalMath.cos(toDecimal(), Expression.CONTEXT)));
         }

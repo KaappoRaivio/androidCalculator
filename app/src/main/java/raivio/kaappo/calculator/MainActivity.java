@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeAngleUnit (View view) {
+        System.out.println("Changing angle unit!");
         Fraction.USE_DEGREES = !Fraction.USE_DEGREES;
         if (Fraction.USE_DEGREES) {
             ((Button) view).setText("RAD");
@@ -277,7 +278,6 @@ public class MainActivity extends AppCompatActivity {
             case KeyEvent.KEYCODE_NUMPAD_ENTER:
             case KeyEvent.KEYCODE_DPAD_CENTER:
             case KeyEvent.KEYCODE_ENTER:
-                System.out.println("moimoimoi");
                 commitResult(findViewById(R.id.equals));
                 break;
 
